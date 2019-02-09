@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Screenshot_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB0-dW-qeg">
+                                <rect key="frame" x="130.5" y="617" width="114" height="30"/>
+                                <state key="normal" title="Take Screenshot"/>
+                                <connections>
+                                    <action selector="takeScreenshotTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTF-g3-QLw"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42j-7D-4MY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="589"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wB0-dW-qeg" secondAttribute="bottom" constant="20" id="2gT-Ki-NGW"/>
+                            <constraint firstItem="wB0-dW-qeg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SMp-hp-LjZ"/>
+                            <constraint firstItem="42j-7D-4MY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UfI-8R-pKa"/>
+                            <constraint firstItem="42j-7D-4MY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bYV-0o-BEI"/>
+                            <constraint firstItem="wB0-dW-qeg" firstAttribute="top" secondItem="42j-7D-4MY" secondAttribute="bottom" constant="8" id="t2W-ke-F7P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="42j-7D-4MY" secondAttribute="trailing" id="xbp-6g-rQy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="42j-7D-4MY" id="6eP-YM-Ltm"/>
+                        <segue destination="FGC-Ji-YbH" kind="show" identifier="show" id="crN-rk-wVS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Show Screenshot View Controller-->
+        <scene sceneID="rnx-B5-0b4">
+            <objects>
+                <viewController id="FGC-Ji-YbH" customClass="ShowScreenshotViewController" customModule="Screenshot_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5L-e0-LpP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a5Q-AC-LJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4SC-uY-ffS" firstAttribute="top" secondItem="a5Q-AC-LJ6" secondAttribute="top" constant="20" id="Pc3-Hd-g5X"/>
+                            <constraint firstItem="4SC-uY-ffS" firstAttribute="bottom" secondItem="a5Q-AC-LJ6" secondAttribute="bottom" id="bx2-Hy-hqM"/>
+                            <constraint firstItem="a5Q-AC-LJ6" firstAttribute="leading" secondItem="4SC-uY-ffS" secondAttribute="leading" id="gzV-yy-wl7"/>
+                            <constraint firstItem="4SC-uY-ffS" firstAttribute="trailing" secondItem="a5Q-AC-LJ6" secondAttribute="trailing" id="rUm-Ar-6Ey"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4SC-uY-ffS"/>
+                    </view>
+                    <connections>
+                        <outlet property="screenshotImageView" destination="a5Q-AC-LJ6" id="MAJ-ID-rAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxF-QW-4Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.79999999999995" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

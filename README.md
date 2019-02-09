@@ -1,0 +1,1 @@
+I made this app to resolve an argument on [Reddit](https://www.reddit.com/r/tech/comments/aofloc/apple_isnt_too_happy_about_apps_that_secretly/eg318iq) where a user said that you couldnt take screenshots of a WebView. This app shows that it indeed is possible.
